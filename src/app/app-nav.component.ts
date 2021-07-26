@@ -1,7 +1,13 @@
-import { Component } from '@angular/core';
+import { NONE_TYPE } from '@angular/compiler';
+import { Component, ViewEncapsulation } from '@angular/core';
 
+
+/* ViewEncapsulation.None : this makes styles written in this component, accessible
+to all elements in the DOM. So, for example, the styles specified in the div code block
+are applied to ALL divs, not just the single div in the template below. */
 @Component({
     selector: 'saa-app-nav',
+    encapsulation: ViewEncapsulation.None,
     template: `
         <div>
             <ul>
@@ -27,6 +33,7 @@ import { Component } from '@angular/core';
             border-radius: 0.5em;
             margin: 1.5em 0;
             padding: 1em 1.2em;
+            border: 2px solid purple;
         }
 
         ul {
